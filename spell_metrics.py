@@ -1,5 +1,6 @@
 import spell.metrics as metrics
 import time
+import random
 import argparse
 
 # Runs for --steps seconds and sends --steps spell metrics with the key 'value'
@@ -13,5 +14,5 @@ if __name__ == "__main__":
 
     value = args.start
     for i in range(args.steps):
-        metrics.send_metric("value", value)
+        metrics.send_metric("value", random.random())
         value += args.stepsize
